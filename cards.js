@@ -26,6 +26,24 @@ data = {
         {"id":23, "text":"People with shoes over 60 dollars, drink 3 times." },
         {"id":24, "text":"$p0 if you are wearing flip flops give out 6 drinks, if not drink twice." },
         {"id":25, "text":"Twix or Snickers? Vote at the same time and losing side drinks 3 times." },
+        {"id":26, "text":"$p0 give out 2 sips to a player less tan than you.. if not possible drink them yourself" },
+        {"id":27, "text":"Give out 2 sips if you use cruise control on highways" },
+        {"id":28, "text":"Go around the room, do a gesture after repeating the gestures that have been done so far. First to fail drink twice. $p0 start." },
+        {"id":29, "text":"$p0 make up your mind: which " },
+        {"id":30, "text":"Would you rather live forever or live only 5 more years? Everyone vote; losing team drinks 2 times" },
+        {"id":31, "text":"Between $p0 and $p1, whoever is less drunk tonight drink 3 times" },
+        {"id":32, "text":"$p0 make up your mind: $p1 and $p2 has to make a meal, who do you think would do a better job? Loser take 2 sips and stick to microwavables" },
+        {"id":33, "text":"$p0 list as many good qualities you can about $p1, $p1 take a sip for every one of them" },
+        {"id":34, "text":"$p0 choose some one to drink from your drink" },
+        {"id":35, "text":"$p0 give out as many sips as you have aunts" },
+        {"id":36, "text":"$p0 make up your mind, who would you rather go to the movies with? $p1 or $p2? Winner gives out 5 sips" },
+        {"id":37, "text":"$p0 drink as many times as there are players" },
+        {"id":38, "text":"$p0 give out as many drinks as black clothes you're wearing" },
+        {"id":39, "text":"$p0 and $p1 trade places" },
+        {"id":40, "text":"For the next 5 cards, $p0 you can only speak to $p1" },
+        {"id":41, "text":"$p0 trade drinks with someone. If no one is willing, down your drink" },
+
+
 
 
       /*  {"id":0, "text":"Drink if you've never watched Game of Thrones." },

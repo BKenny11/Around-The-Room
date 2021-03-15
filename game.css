@@ -95,6 +95,8 @@ body {
     margin: 20px 5px
 }
 
+
+
 .player-entry {
     margin: 10px 5px;
     display: inline-block;
@@ -137,31 +139,89 @@ body {
 
 /* Portrait */
 @media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) {
+    .welcome-card{
+        height: 60vh;
+        width: calc(100vw - 20px);
+        padding-top: 40vh;
+    }
+
+    .start-title {
+        font-size: 80px;
+        margin-top: 0%;
+    }
+
+    .notes{       
+        position: fixed;
+        bottom: 200px;
+        font-size: 30px;
+    }
+
+    .enter-screen{
+        margin-top: -40vh;
+    }
+
+    .add-button{
+        font-size: 80px;
+        margin-left: 20px;
+    }
+
+    .player-list{
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+
+    .player-entry{
+        font-size: 30px;
+        background: none;
+        text-transform: capitalize;
+
+    }
+    
+    .begin-button{
+        font-size: 50px;
+    }
+
+    .game-board{
+        margin-top: -50vh;
+        display: flex;
+        height: 20vh;
+        flex-direction:column-reverse;
+        margin-left: 45px;
+        margin-right: 45px;
+    }
+
     .deck {
-        height: 900px;
-        width: 440px;
-        margin-left: -230px;
+        height: 400px;
+        width: calc(100vw - 90px);
         font-size: 60px;
+        margin-bottom: -70vh;
+       
     }
 
     .card {
-        width: 420px;
-        height: 880px;
+        width: calc(100% - 115px);
+        height: 65vh;
+        margin-left: 0px;
         font-size: 50px;
+        margin-top: -68vh;
+        box-shadow: 5px 5px 8px rgba(44, 44, 44, .4);
     }
 
     .new-game-button {
         font-size: 40px;
     }
 
-    .start-title {
-        font-size: 80px;
-    }
+    
 
     .game-button {
         font-size: 50px;
         border-radius: 50px;
         margin: 80px 0px
+    }
+
+
+    .name-field{
+        font-size: 60px;
     }
 
 }

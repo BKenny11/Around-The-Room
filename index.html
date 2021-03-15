@@ -13,18 +13,21 @@
 
             <button class="game-button" onclick="startGame()">Add Players!</button>
 
-            <div class="notes">Based off the phone app game Piccolo, all you have to do is pick a card and do as it
-                says!</div>
+            <div class="notes">
+                <div>Based on a combination of the phone app game <i>Piccolo</i> and the card game <i>Buzzed</i>, all
+                    you have to do is pick a card and do as it
+                    says!</div>
 
-            <!-- <div class="notes">Recommend video chatting with your friends through Facetime, Facebook, Zoom, etc. for the most fun.</div> -->
+                <!-- <div class="notes">Recommend video chatting with your friends through Facetime, Facebook, Zoom, etc. for the most fun.</div> -->
 
-            <div class="notes"><span class="warning">WARNING:</span> This game will get you tipsy</div>
+                <div><span class="warning">WARNING:</span> This game will get you tipsy</div>
+            </div>
         </div>
-        <div v-if="gameStarted && !playersEntered">
+        <div v-if="gameStarted && !playersEntered" class="enter-screen">
             <div class="start-title">Enter the players!</div>
 
             <div class="player-list">
-                <div v-for="player of players" :key="player" class="player-entry">
+                <div v-for="player of players" :key="player" class="player-entry animated bounceInLeft">
                     {{player}}
                     <!-- <button class="remove-button" onclick="removePlayer()">X</button> -->
                 </div>

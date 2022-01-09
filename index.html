@@ -76,11 +76,18 @@
 
         function startGame() {
             myObject.gameStarted = true;
-
             myObject.cardsPulled = [];
-            for (let card of data.cards) {
-                myObject.cards.push(card);
-            }
+            fetch('https://bkcards-api.herokuapp.com/card/all')
+                .then(response => response.json())
+                .then(data => {
+                    console.log(data);
+                    myObject.cards = data.cards.map(card => {
+                        return {
+                            id: card.id,
+                            text: card.text
+                        }
+                    });
+                })
         }
 
         function enterPlayer() {

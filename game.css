@@ -90,6 +90,17 @@ body {
     text-decoration: underline;
     font-size: 18px;
 }
+.add-suggestion-button {
+    position: absolute;
+    bottom: 25px;
+    left: 25px;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    text-decoration: underline;
+    font-size: 18px;
+}
 
 .player-list {
     margin: 20px 5px
@@ -112,8 +123,15 @@ body {
 
 .name-field {
     padding: 8px 10px;
-    border: none;
+    border: 1px solid #a7a7a7;
     border-radius: 3px;
+}
+
+textarea{
+    width:100%;
+    height: 100px;
+    resize: none;
+    margin-top: 10px;
 }
 
 .add-button {
@@ -135,6 +153,51 @@ body {
 
 .input-holder{
     display: flex;
+}
+
+.modal-background{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+    display: flex;
+}
+
+.suggestion-modal{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 350px;
+    background: white;
+    border-radius: 10px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.suggestion-button{
+    display: block-inline;
+    border: none;
+    background: none;
+    color: #31b2fe;
+    font-size: 20px;
+    cursor: pointer;
+    border: 1px solid #31b2fe;
+    border-radius: 50px;
+    padding: 10px 20px;
+    margin: 10px 10px;
+}
+
+.button-holder{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
 }
 
 /* Portrait */

@@ -57,7 +57,21 @@
             </div>
         </div>
 
+        <button v-if="gameStarted" class="add-suggestion-button" onclick="openSuggestionModal()">Suggest Card</button>
         <button v-if="gameStarted" class="new-game-button" onclick="startGame()">Start New Game</button>
+
+        <div v-if="showingSuggestionModal" class="modal-background">
+            <div class="suggestion-modal">
+                <div class="suggestion-title">Submit Card Suggestion</div>
+                <div class="suggestion-buttons">
+                    <textarea class="name-field" type="text" v-model="suggestion"></textarea>
+                    <div class="button-holder">
+                        <button class="suggestion-button" onclick="cancelSuggestion()">Cancel</button>
+                        <button class="suggestion-button" onclick="submitSuggestion()">Submit</button>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
     <script>
@@ -71,6 +85,8 @@
                 newPlayer: '',
                 gameStarted: false,
                 playersEntered: false,
+                showingSuggestionModal: false,
+                suggestion: ''
             }
         })
 
@@ -87,6 +103,30 @@
                             text: card.text
                         }
                     });
+                })
+        }
+
+        function openSuggestionModal() {
+            myObject.showingSuggestionModal = true;
+        }
+
+        function cancelSuggestion() {
+            myObject.showingSuggestionModal = false;
+        }
+
+        function submitSuggestion() {
+            fetch('https://bkcards-api.herokuapp.com/suggestion', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        text: myObject.suggestion
+                    })
+                })
+                .then(response => response.json())
+                .then(data => {
+                    myObject.showingSuggestionModal = false;
                 })
         }
 

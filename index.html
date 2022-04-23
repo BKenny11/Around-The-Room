@@ -7,6 +7,7 @@
 <link rel="stylesheet" href="./game.css">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="A fun multiplayer game to have some drinks among friends">
+<link rel="manifest" href="/manifest.json">
 
 <body>
     <div id="app">
@@ -77,6 +78,11 @@
     </div>
 
     <script>
+        if ('serviceWorker' in navigator) { 
+            // register service worker navigator.serviceWorker.register('/service-worker.js'); 
+            console.log('Service Worker is supported');
+        }
+
         var myObject = new Vue({
             el: '#app',
             data: {

@@ -7,7 +7,9 @@
 <link rel="stylesheet" href="./game.css">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="A fun multiplayer game to have some drinks among friends">
-<link rel="manifest" href="./manifest.json">
+<!-- <link rel="manifest" href="./manifest.json"> -->
+<link rel="canonical" href="https://bkenny11.github.io/Around-The-Room/" />
+<link rel="manifest" href="/Around-The-Room/manifest.json">
 
 <body>
     <div id="app">
@@ -60,7 +62,8 @@
             </div>
         </div>
 
-        <button v-if="gameStarted" class="add-suggestion-button" onclick="myObject.openSuggestionModal()">Suggest Card</button>
+        <button v-if="gameStarted" class="add-suggestion-button" onclick="myObject.openSuggestionModal()">Suggest
+            Card</button>
         <button v-if="gameStarted" class="new-game-button" onclick="myObject.startGame()">Start New Game</button>
 
         <div v-if="showingSuggestionModal" class="modal-background">
@@ -78,9 +81,16 @@
     </div>
 
     <script>
-        if ('serviceWorker' in navigator) { 
-            // register service worker navigator.serviceWorker.register('/service-worker.js'); 
-            console.log('Service Worker is supported');
+        // if ('serviceWorker' in navigator) { 
+        //     // register service worker navigator.serviceWorker.register('/service-worker.js'); 
+        //     console.log('Service Worker is supported');
+        // }
+        if (navigator.serviceWorker) {
+            navigator.serviceWorker.register(
+                '/Around-The-Room/sw.js', {
+                    scope: '/Around-The-Room/'
+                }
+            )
         }
 
         var myObject = new Vue({
@@ -210,7 +220,6 @@
                 }
             }
         })
-
     </script>
 
 </body>

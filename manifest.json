@@ -1,8 +1,8 @@
 {
     "name": "Around the Room",
     "short_name" : "ATR",
-    "start_url": "index.html?utm_source=homescreen",
-    "scope" : "./",
+    "start_url": "/",
+    "scope" : "/",
     "icons": [
         {
             "src": "./Icon-1024.png",

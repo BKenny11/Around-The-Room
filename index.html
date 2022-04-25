@@ -8,7 +8,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="icon" type="image/x-icon" href="./favicon.ico">
 <meta name="description" content="A fun multiplayer game to have some drinks among friends">
-<!-- <link rel="manifest" href="./manifest.json"> -->
 <link rel="canonical" href="https://bkenny11.github.io/Around-The-Room/" />
 <link rel="manifest" href="/Around-The-Room/manifest.json">
 <meta name="theme-color" content="#31b2fe">
@@ -16,10 +15,11 @@
 <body>
     <div id="app">
         <div class="welcome-card" v-if="!gameStarted">
-            <div class="start-title">Welcome to <b><i>Around the Room!</i></b></div>
+            <div class="start-title">Welcome to <div class="title-inset">Around the Room!</div></div>
 
             <button class="game-button" onclick="myObject.quickStart()">Quick Start!</button>
             <button class="game-button" onclick="myObject.startGame()">Enter Players!</button>
+            <button class="inverse-game-button" onclick="myObject.openSuggestionModal()">Suggest Card!</button>
 
             <div class="notes">
                 <div>Based on a combination of the phone app game <i>Piccolo</i> and the card game <i>Buzzed</i>, all
@@ -59,14 +59,14 @@
                 </div>
                 <div v-if="cards.length == 0" class="welcome-card">
                     <div class="title">Out of Cards!</div>
-                    <button class="game-button" onclick="myObject.startGame()">Start a new Game!</button>
+                    <button class="game-button" onclick="myObject.startNewGame()">Start a new Game!</button>
                 </div>
             </div>
         </div>
 
         <button v-if="gameStarted" class="add-suggestion-button" onclick="myObject.openSuggestionModal()">Suggest
             Card</button>
-        <button v-if="gameStarted" class="new-game-button" onclick="myObject.startGame()">Start New Game</button>
+        <button v-if="gameStarted" class="new-game-button" onclick="myObject.startNewGame()">Start New Game</button>
 
         <div v-if="showingSuggestionModal" class="modal-background">
             <div class="suggestion-modal">
@@ -83,10 +83,7 @@
     </div>
 
     <script>
-        // if ('serviceWorker' in navigator) { 
-        //     // register service worker navigator.serviceWorker.register('/service-worker.js'); 
-        //     console.log('Service Worker is supported');
-        // }
+
         if (navigator.serviceWorker) {
             navigator.serviceWorker.register(
                 '/Around-The-Room/sw.js', {
@@ -140,6 +137,16 @@
                             });
                         })
                     myObject.playersEntered = true;
+                },
+
+                startNewGame(){
+                    myObject.gameStarted = false;
+                    myObject.playersEntered = false;
+                    myObject.players = [];
+                    myObject.cardsPulled = [];
+                    myObject.playersUsed = [];
+                    myObject.newPlayer = '';
+                    myObject.suggestion = '';
                 },
 
                 openSuggestionModal() {

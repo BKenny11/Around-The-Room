@@ -8,7 +8,7 @@ var APP_PREFIX = 'atr_';
 // you need to change this version (version_01, version_02…). 
 // If you don't change the version, the service worker will give your
 // users the old files!
-var VERSION = 'version_02';
+var VERSION = 'version_03';
 
 var CACHE_NAME = APP_PREFIX + VERSION
  

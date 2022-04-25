@@ -1,3 +1,19 @@
+/*
+Blues
+blue-1: #00A6FB
+blue-2: #0582CA
+blue-3: #006494
+blue-4: #003554
+blue-5: #051923
+*/
+
+* {
+    margin: 0rem;
+    padding: 0rem;
+    box-sizing: border-box;
+}
+
+
 body {
     text-align: center;
     height: 100vh;
@@ -19,8 +35,11 @@ body {
 }
 
 .start-title {
-    font-style: italic;
     font-size: 30px;
+}
+
+.title-inset{
+    display: inline-block;
 }
 
 .warning {
@@ -36,7 +55,7 @@ body {
 .game-button {
     text-decoration: none;
     color: white;
-    background: #31b2fe;
+    background: #00A6FB;
     border-radius: 30px;
     padding: 10px 50px;
     margin: 30px 0px;
@@ -46,15 +65,29 @@ body {
     font-size: 20px;
 }
 
+.inverse-game-button {
+    text-decoration: none;
+    color: white;
+    background: none;
+    border-radius: 30px;
+    margin: 40px 50px;
+    display: inline-block;
+    border: none;
+    cursor: pointer;
+    font-size: 20px;
+    text-decoration: underline;
+}
+
 .deck {
     height: 400px;
     width: 225px;
-    background: black;
+    background: #051923;
     color: white;
     border: none;
     cursor: pointer;
     font-size: 24px;
     border-radius: 10px;
+    box-shadow: 5px 5px 8px rgba(44, 44, 44, .4);
 }
 
 .game-board {
@@ -77,6 +110,7 @@ body {
     padding: 10px;
     position: absolute;
     pointer-events: none;
+    box-shadow: 5px 5px 8px rgba(44, 44, 44, .4);
 }
 
 .new-game-button {
@@ -203,14 +237,21 @@ textarea{
 /* Portrait */
 @media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) {
     .welcome-card{
-        height: 60vh;
-        width: calc(100vw - 20px);
-        padding-top: 40vh;
+        background: none;
+        color: white;
+        padding: 0px;
     }
 
     .start-title {
         font-size: 20px;
         margin-top: 0%;
+        margin-bottom: 40px;
+    }
+
+    .title-inset {
+        font-style: italic;
+        font-size: 30px;
+        display: block;
     }
 
     .notes{       
@@ -225,7 +266,7 @@ textarea{
     }
 
     .add-button{
-        font-size: 80px;
+        font-size: 30px;
         margin-left: 20px;
     }
 
@@ -235,15 +276,23 @@ textarea{
     }
 
     .player-entry{
-        font-size: 30px;
         background: none;
         text-transform: capitalize;
 
     }
     
-    .begin-button{
-        font-size: 50px;
+    .game-button{
+        background: #006494;
+        border-radius: 50px;
+        margin: 15px 0px;
+        font-size: 15px;
     }
+
+    .inverse-game-button{
+        margin-top: 20px;
+        font-size: 15px;
+    }
+
 
     .game-board{
         margin-top: -50vh;
@@ -255,37 +304,18 @@ textarea{
     }
 
     .deck {
-        height: 400px;
+        height: 80px;
         width: calc(100vw - 90px);
-        font-size: 60px;
+        font-size: 20px;
         margin-bottom: -70vh;
-       
     }
 
     .card {
-        width: calc(100% - 115px);
+        width: calc(100% - 90px);
         height: 65vh;
         margin-left: 0px;
-        font-size: 50px;
+        font-size: 20px;
         margin-top: -68vh;
-        box-shadow: 5px 5px 8px rgba(44, 44, 44, .4);
-    }
-
-    .new-game-button {
-        font-size: 40px;
-    }
-
-    
-
-    .game-button {
-        font-size: 15px;
-        border-radius: 50px;
-        margin: 80px 0px
-    }
-
-
-    .name-field{
-        font-size: 60px;
     }
 
 }

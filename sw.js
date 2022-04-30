@@ -8,7 +8,7 @@ var APP_PREFIX = 'atr_';
 // you need to change this version (version_01, version_02…). 
 // If you don't change the version, the service worker will give your
 // users the old files!
-var VERSION = 'version_03';
+var VERSION = 'version_04';
 
 var CACHE_NAME = APP_PREFIX + VERSION
  
@@ -18,7 +18,8 @@ var URLS = [
   `${GHPATH}/`,
   `${GHPATH}/index.html`,
   `${GHPATH}/game.css`,
-  `${GHPATH}/cards.js`
+  `${GHPATH}/cards.js`,
+  `${GHPATH}/Hero.png`,
 ]
 
 // Respond with cached resources

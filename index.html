@@ -15,10 +15,11 @@
 <body>
     <div id="app">
         <div class="welcome-card" v-if="!gameStarted">
+            <img src="./Hero.png" width="230">
             <div class="start-title">Welcome to <div class="title-inset">Around the Room!</div></div>
 
-            <button class="game-button" onclick="myObject.quickStart()">Quick Start!</button>
-            <button class="game-button" onclick="myObject.startGame()">Enter Players!</button>
+            <div><button class="game-button" onclick="myObject.quickStart()">Quick Start!</button></div>
+            <div><button class="game-button" onclick="myObject.startGame()">Enter Players!</button></div>
             <button class="inverse-game-button" onclick="myObject.openSuggestionModal()">Suggest Card!</button>
 
             <div class="notes">
@@ -51,7 +52,10 @@
         </div>
         <div v-if="gameStarted && playersEntered">
             <div class="game-board">
-                <button class="deck" v-if="cards.length > 0" onclick="myObject.pickCard()">Draw Card</button>
+                <button class="deck" v-if="cards.length > 0" onclick="myObject.pickCard()">
+                    <img src="./Hero.png" height="50">
+                    Draw Card
+                </button>
                 <div class="cards-holder" v-if="cards.length > 0">
                     <div class="card animated slideInLeft faster" v-for="card of cardsPulled" :key="card.id">
                         {{interpolateCard(card.text)}}

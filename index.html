@@ -113,7 +113,7 @@
                 startGame() {
                     myObject.gameStarted = true;
                     myObject.cardsPulled = [];
-                    fetch('https://bkcards-api.herokuapp.com/card/all')
+                    fetch('https://bkcards-api-1d638a347ffe.herokuapp.com/card/all')
                         .then(response => response.json())
                         .then(data => {
                             console.log(data);
@@ -129,7 +129,7 @@
                 quickStart() {
                     myObject.gameStarted = true;
                     myObject.cardsPulled = [];
-                    fetch('https://bkcards-api.herokuapp.com/card/all')
+                    fetch('https://bkcards-api-1d638a347ffe.herokuapp.com/card/all')
                         .then(response => response.json())
                         .then(data => {
                             console.log(data);
@@ -162,7 +162,7 @@
                 },
 
                 submitSuggestion() {
-                    fetch('https://bkcards-api.herokuapp.com/suggestion', {
+                    fetch('https://bkcards-api-1d638a347ffe.herokuapp.com/suggestion', {
                             method: 'POST',
                             headers: {
                                 'Content-Type': 'application/json'

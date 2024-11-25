@@ -20,7 +20,7 @@
 
             <div><button class="game-button" onclick="myObject.quickStart()">Quick Start!</button></div>
             <div><button class="game-button" onclick="myObject.startGame()">Enter Players!</button></div>
-            <button class="inverse-game-button" onclick="myObject.openSuggestionModal()">Suggest Card!</button>
+            <!-- <button class="inverse-game-button" onclick="myObject.openSuggestionModal()">Suggest Card!</button> -->
 
             <div class="notes">
                 <div>Based on a combination of the phone app game <i>Piccolo</i> and the card game <i>Buzzed</i>, all
@@ -68,11 +68,11 @@
             </div>
         </div>
 
-        <button v-if="gameStarted" class="add-suggestion-button" onclick="myObject.openSuggestionModal()">Suggest
-            Card</button>
+        <!-- <button v-if="gameStarted" class="add-suggestion-button" onclick="myObject.openSuggestionModal()">Suggest
+            Card</button> -->
         <button v-if="gameStarted" class="new-game-button" onclick="myObject.startNewGame()">Start New Game</button>
 
-        <div v-if="showingSuggestionModal" class="modal-background">
+        <!-- <div v-if="showingSuggestionModal" class="modal-background">
             <div class="suggestion-modal">
                 <div class="suggestion-title">Submit Card Suggestion</div>
                 <div class="suggestion-buttons">
@@ -83,7 +83,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> -->
     </div>
 
     <script>
@@ -113,33 +113,35 @@
                 startGame() {
                     myObject.gameStarted = true;
                     myObject.cardsPulled = [];
-                    fetch('https://bkcards-api-1d638a347ffe.herokuapp.com/card/all')
-                        .then(response => response.json())
-                        .then(data => {
-                            console.log(data);
-                            myObject.cards = data.cards.map(card => {
-                                return {
-                                    id: card.id,
-                                    text: card.text
-                                }
-                            });
-                        })
+                    myObject.cards = data.cards
+                    // fetch('https://bkcards-api-1d638a347ffe.herokuapp.com/card/all')
+                    //     .then(response => response.json())
+                    //     .then(data => {
+                    //         console.log(data);
+                    //         myObject.cards = data.cards.map(card => {
+                    //             return {
+                    //                 id: card.id,
+                    //                 text: card.text
+                    //             }
+                    //         });
+                    //     })
                 },
 
                 quickStart() {
                     myObject.gameStarted = true;
                     myObject.cardsPulled = [];
-                    fetch('https://bkcards-api-1d638a347ffe.herokuapp.com/card/all')
-                        .then(response => response.json())
-                        .then(data => {
-                            console.log(data);
-                            myObject.cards = data.cards.filter(card => !card.playerSpecific).map(card => {
-                                return {
-                                    id: card.id,
-                                    text: card.text
-                                }
-                            });
-                        })
+                    myObject.cards = data.cards;
+                    // fetch('https://bkcards-api-1d638a347ffe.herokuapp.com/card/all')
+                    //     .then(response => response.json())
+                    //     .then(data => {
+                    //         console.log(data);
+                    //         myObject.cards = data.cards.filter(card => !card.playerSpecific).map(card => {
+                    //             return {
+                    //                 id: card.id,
+                    //                 text: card.text
+                    //             }
+                    //         });
+                    //     })
                     myObject.playersEntered = true;
                 },
 
@@ -153,29 +155,29 @@
                     myObject.suggestion = '';
                 },
 
-                openSuggestionModal() {
-                    myObject.showingSuggestionModal = true;
-                },
+                // openSuggestionModal() {
+                //     myObject.showingSuggestionModal = true;
+                // },
 
-                cancelSuggestion() {
-                    myObject.showingSuggestionModal = false;
-                },
+                // cancelSuggestion() {
+                //     myObject.showingSuggestionModal = false;
+                // },
 
-                submitSuggestion() {
-                    fetch('https://bkcards-api-1d638a347ffe.herokuapp.com/suggestion', {
-                            method: 'POST',
-                            headers: {
-                                'Content-Type': 'application/json'
-                            },
-                            body: JSON.stringify({
-                                text: myObject.suggestion
-                            })
-                        })
-                        .then(response => response.json())
-                        .then(data => {
-                            myObject.showingSuggestionModal = false;
-                        })
-                },
+                // submitSuggestion() {
+                //     fetch('https://bkcards-api-1d638a347ffe.herokuapp.com/suggestion', {
+                //             method: 'POST',
+                //             headers: {
+                //                 'Content-Type': 'application/json'
+                //             },
+                //             body: JSON.stringify({
+                //                 text: myObject.suggestion
+                //             })
+                //         })
+                //         .then(response => response.json())
+                //         .then(data => {
+                //             myObject.showingSuggestionModal = false;
+                //         })
+                // },
 
                 enterPlayer() {
                     myObject.players.push(myObject.newPlayer);
